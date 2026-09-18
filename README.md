@@ -24,6 +24,40 @@ Version `0.1.26` also adds an optional **Token Saver** for large tool results. I
 > [!NOTE]
 > Pi Skill Orchestrator is an independent community extension. It is not an official Pi project.
 
+## Table of contents
+
+- [Why this extension is needed](#why-this-extension-is-needed)
+- [Groups and profiles](#groups-and-profiles)
+- [Main features](#main-features)
+- [Optional Token Saver](#optional-token-saver)
+- [Requirements](#requirements)
+- [Install](#install)
+- [Quick start](#quick-start)
+- [Commands](#commands)
+- [Manager controls](#manager-controls)
+- [How lazy search works](#how-lazy-search-works)
+- [Configuration files](#configuration-files)
+- [Compatibility](#compatibility)
+- [Documentation](#documentation)
+  - [Documentation index](docs/README.md)
+  - [Installation guide](docs/installation.md)
+  - [Usage guide](docs/usage.md)
+  - [Groups and profiles](docs/groups-and-profiles.md)
+  - [Token Saver](docs/token-saver.md)
+  - [Command reference](docs/commands.md)
+  - [Configuration reference](docs/configuration.md)
+  - [Architecture and context model](docs/architecture.md)
+  - [Dependency loading](docs/dependencies.md)
+  - [Pi compatibility](docs/compatibility.md)
+  - [Troubleshooting](docs/troubleshooting.md)
+  - [Development and testing](docs/development.md)
+  - [Publishing to npm and GitHub](docs/publishing.md)
+- [Testing and development](#testing-and-development)
+- [Contributing](#contributing)
+- [Security](#security)
+- [Release history](#release-history)
+- [License](#license)
+
 ## Why this extension is needed
 
 Pi already loads the full `SKILL.md` body only when a skill is used. That part is good.
@@ -225,40 +259,6 @@ Commands:
 ```
 
 Read [Token Saver](docs/token-saver.md) for the complete design, tactics, safety rules, and Headroom/RTK mapping.
-
-## Table of contents
-
-- [Why this extension is needed](#why-this-extension-is-needed)
-- [Groups and profiles](#groups-and-profiles)
-- [Main features](#main-features)
-- [Optional Token Saver](#optional-token-saver)
-- [Requirements](#requirements)
-- [Install](#install)
-- [Quick start](#quick-start)
-- [Commands](#commands)
-- [Manager controls](#manager-controls)
-- [How lazy search works](#how-lazy-search-works)
-- [Configuration files](#configuration-files)
-- [Compatibility](#compatibility)
-- [Documentation](#documentation)
-  - [Documentation index](docs/README.md)
-  - [Installation guide](docs/installation.md)
-  - [Usage guide](docs/usage.md)
-  - [Groups and profiles](docs/groups-and-profiles.md)
-  - [Token Saver](docs/token-saver.md)
-  - [Command reference](docs/commands.md)
-  - [Configuration reference](docs/configuration.md)
-  - [Architecture and context model](docs/architecture.md)
-  - [Dependency loading](docs/dependencies.md)
-  - [Pi compatibility](docs/compatibility.md)
-  - [Troubleshooting](docs/troubleshooting.md)
-  - [Development and testing](docs/development.md)
-  - [Publishing to npm and GitHub](docs/publishing.md)
-- [Testing and development](#testing-and-development)
-- [Contributing](#contributing)
-- [Security](#security)
-- [Release history](#release-history)
-- [License](#license)
 
 ## Requirements
 
