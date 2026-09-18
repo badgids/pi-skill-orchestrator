@@ -151,7 +151,7 @@ export class SkillManagerOverlay {
   }
 
   private applyProfileResult(result: ProfileMutationResult, message: string): boolean {
-    if (!result.ok) {
+    if (result.ok === false) {
       this.statusKind = "error";
       this.statusMessage = result.error;
       return false;
@@ -178,7 +178,7 @@ export class SkillManagerOverlay {
   private ensureAutosaved(): boolean {
     if (!this.dirty) return true;
     const result = this.saveConfigNow(cloneConfig(this.config));
-    if (result.ok) {
+    if (result.ok === true) {
       this.dirty = false;
       this.statusKind = "success";
       this.statusMessage = "";
@@ -1015,7 +1015,7 @@ export class SkillManagerOverlay {
 
     if (matchesKey(data, Key.escape)) {
       const result = this.saveConfigNow(cloneConfig(this.config));
-      if (!result.ok) {
+      if (result.ok === false) {
         this.dirty = true;
         this.statusKind = "error";
         this.statusMessage = `Autosave failed: ${result.error}`;
@@ -1183,7 +1183,7 @@ export class SkillManagerOverlay {
   private markDirty(): void {
     this.dirty = true;
     const result = this.saveConfigNow(cloneConfig(this.config));
-    if (result.ok) {
+    if (result.ok === true) {
       this.dirty = false;
       this.statusKind = "success";
       this.statusMessage = "";

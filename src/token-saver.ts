@@ -176,7 +176,7 @@ function shouldProtectExactRead(toolName: string, input: Record<string, unknown>
   if (!/^\s*(?:cat|head|tail|sed|nl|bat)\b/i.test(command)) return false;
   // Preserve quoted source paths too. A shell read such as `cat "src/my file.ts"`
   // is still an exact source read during an edit-oriented task.
-  const tokens = command.match(/"[^"\r\n]+"|'[^'\r\n]+'|[^\s]+/g) ?? [];
+  const tokens: string[] = command.match(/"[^"\r\n]+"|'[^'\r\n]+'|[^\s]+/g) ?? [];
   return tokens.some((token) => {
     const unquoted = token.length >= 2 && ((token.startsWith('"') && token.endsWith('"')) || (token.startsWith("'") && token.endsWith("'")))
       ? token.slice(1, -1)

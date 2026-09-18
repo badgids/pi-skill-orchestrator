@@ -336,7 +336,7 @@ export default function (pi: ExtensionAPI) {
     const profileMatch = event.text.trim().match(/^\/skill-profile:([^\s]+)$/i);
     if (profileMatch) {
       const result = applyProfileSelection(profileStore.switchProfile(profileMatch[1] ?? ""));
-      if (!result.ok) {
+      if (result.ok === false) {
         ctx.ui.notify(result.error, "error");
         return { action: "handled" as const };
       }
@@ -775,7 +775,7 @@ export default function (pi: ExtensionAPI) {
     const result = await ctx.ui.custom<UiResult>((tui, theme, _keys, done) => {
       const saveConfigNow = (nextConfig: SkillManagerConfig) => {
         const result = applyProfileMutation(profileStore.saveActiveConfig(nextConfig));
-        return result.ok
+        return result.ok === true
           ? { ok: true as const }
           : { ok: false as const, error: result.error };
       };
@@ -871,7 +871,7 @@ export default function (pi: ExtensionAPI) {
       const selectedIndex = options.indexOf(selected);
       if (selectedIndex < 0) return;
       const result = applyProfileSelection(profileStore.switchProfile(profileState.profiles[selectedIndex].id));
-      if (!result.ok) {
+      if (result.ok === false) {
         ctx.ui.notify(result.error, "error");
         return;
       }
@@ -926,7 +926,7 @@ export default function (pi: ExtensionAPI) {
         return;
       }
       const result = applyProfileMutation(profileStore.saveActiveConfig({ ...configState.config, tokenSaverEnabled: enabled }));
-      if (!result.ok) {
+      if (result.ok === false) {
         ctx.ui.notify(result.error, "error");
         return;
       }
